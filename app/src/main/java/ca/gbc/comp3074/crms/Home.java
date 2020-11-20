@@ -20,6 +20,7 @@ public class Home extends AppCompatActivity {
     TextView currentUserText;
 
     @Override
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_layout, menu);
@@ -53,10 +54,16 @@ public class Home extends AppCompatActivity {
     }
 
     private void startViewProfile() {
+        Intent intent = new Intent(Home.this, ViewProfile.class);
+        startActivity(intent);
+    }
+
+    @Override
 
     }
 
     @Override
+>
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
