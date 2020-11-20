@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CRMS">
+<<<<<<< Updated upstream
         <activity android:name=".Home"></activity>
+=======
+        <activity android:name=".DeleteReservation"></activity>
+        <activity android:name=".MakeReservation" />
+        <activity android:name=".Home"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+
+>>>>>>> Stashed changes
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +33,7 @@
         <activity
             android:name=".ViewProfile"
             android:label="View Profile"
+<<<<<<< Updated upstream
             android:theme="@style/AppTheme.ActionBar.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +41,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+=======
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+>>>>>>> Stashed changes
     </application>
 
 </manifest>

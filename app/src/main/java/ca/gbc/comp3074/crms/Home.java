@@ -17,6 +17,45 @@ public class Home extends AppCompatActivity {
     TextView currentUserText;
 
     @Override
+<<<<<<< Updated upstream
+=======
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_layout, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.viewProfile:
+                startViewProfile();
+                return true;
+            case R.id.makeReservation:
+                startMakeReservation();
+                return true;
+            case R.id.deleteReservation:
+                startDeleteReservation();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void startDeleteReservation() {
+    }
+
+    private void startMakeReservation() {
+    }
+
+    private void startViewProfile() {
+        Intent intent = new Intent(Home.this, ViewProfile.class);
+        startActivity(intent);
+    }
+
+    @Override
+>>>>>>> Stashed changes
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);

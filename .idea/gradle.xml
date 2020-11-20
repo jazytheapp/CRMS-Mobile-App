@@ -8,6 +8,10 @@
         <option name="disableWrapperSourceDistributionNotification" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+<<<<<<< Updated upstream
+=======
+        <option name="gradleHome" value="$PROJECT_DIR$/../Program Files/Gradle/gradle-6.6.1" />
+>>>>>>> Stashed changes
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
