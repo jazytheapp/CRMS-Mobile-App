@@ -27,7 +27,8 @@ public class Home extends AppCompatActivity {
         Intent intent = getIntent();
         FirebaseUser currentUser = (FirebaseUser) intent.getExtras().get("currentUser");
 
-        currentUserText.setText("CURRENT USER: " + currentUser.getEmail() + ", " + currentUser.getUid());
+//        currentUserText.setText("USER: " + currentUser.getEmail() + ", " + currentUser.getUid());
+        currentUserText.setText("USER: " + currentUser.getEmail() );
 
         logoutBtn.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
