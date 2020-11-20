@@ -45,6 +45,8 @@ public class Home extends AppCompatActivity {
     }
 
     private void startDeleteReservation() {
+        Intent myIntent = new Intent(Home.this, DeleteReservation.class);
+        Home.this.startActivity(myIntent);
     }
 
     private void startMakeReservation() {
