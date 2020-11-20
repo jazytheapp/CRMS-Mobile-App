@@ -3,8 +3,6 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light">
 
     </style>
-    <style name="AppTheme.ActionBar.Transparent" parent="AppTheme">
-    <?xml version="1.0" encoding="utf-8"?>
 <!--    <style name="AppTheme" parent="Theme.AppCompat.Light">-->
 
 <!--    </style>-->
