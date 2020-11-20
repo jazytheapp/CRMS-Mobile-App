@@ -1,20 +1,17 @@
 package ca.gbc.comp3074.crms;
 
-<<<<<<< Updated upstream
-=======
+
 import androidx.appcompat.app.AppCompatActivity;
 
->>>>>>> Stashed changes
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-<<<<<<< Updated upstream
+
 import androidx.appcompat.app.AppCompatActivity;
 
-=======
->>>>>>> Stashed changes
+
 public class ViewProfile extends AppCompatActivity {
     private Button editProfile_button;
     @Override

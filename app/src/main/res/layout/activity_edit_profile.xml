@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditProfile">
-
     <Button
         android:id="@+id/button_update"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -58,5 +57,4 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_name" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

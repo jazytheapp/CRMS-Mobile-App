@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,8 +20,7 @@ public class Home extends AppCompatActivity {
     TextView currentUserText;
 
     @Override
-<<<<<<< Updated upstream
-=======
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_layout, menu);
@@ -44,6 +46,8 @@ public class Home extends AppCompatActivity {
     }
 
     private void startDeleteReservation() {
+        Intent myIntent = new Intent(Home.this, DeleteReservation.class);
+        Home.this.startActivity(myIntent);
     }
 
     private void startMakeReservation() {
@@ -55,7 +59,11 @@ public class Home extends AppCompatActivity {
     }
 
     @Override
->>>>>>> Stashed changes
+
+    }
+
+    @Override
+>
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
@@ -66,7 +74,8 @@ public class Home extends AppCompatActivity {
         Intent intent = getIntent();
         FirebaseUser currentUser = (FirebaseUser) intent.getExtras().get("currentUser");
 
-        currentUserText.setText("CURRENT USER: " + currentUser.getEmail() + ", " + currentUser.getUid());
+//        currentUserText.setText("USER: " + currentUser.getEmail() + ", " + currentUser.getUid());
+        currentUserText.setText("USER: " + currentUser.getEmail() );
 
         logoutBtn.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
