@@ -51,6 +51,8 @@ public class Home extends AppCompatActivity {
     }
 
     private void startMakeReservation() {
+        Intent intent = new Intent(Home.this, MakeReservation.class);
+        startActivity(intent);
     }
 
     private void startViewProfile() {
