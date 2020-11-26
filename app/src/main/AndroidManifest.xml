@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ca.gbc.comp3074.crms">
 
+    <uses-permission android:name="androi‌​d.permission.READ_EXT‌​ERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CRMS">
-        <activity android:name=".Home"></activity>
-        <activity android:name=".DeleteReservation"></activity>
+        <activity android:name=".ChangePassword"
+            android:label="Change Password"
+            android:parentActivityName=".ViewProfile"
+            android:theme="@style/AppTheme.ActionBar.Transparent"></activity>
+        <activity android:name=".DeleteReservation" />
         <activity android:name=".MakeReservation" />
-        <activity android:name=".Home"
-            android:theme="@style/AppTheme.ActionBar.Transparent"/>
-        <activity android:name=".DeleteReservation"></activity>
-        <activity android:name=".MakeReservation" />
-        <activity android:name=".EditProfile" />
-        <activity android:name=".ViewProfile" />
-        <activity android:name=".Home"
-            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+        <activity
+            android:name=".Home"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,8 +32,9 @@
         <activity
             android:name=".EditProfile"
             android:label="Edit Profile"
+            android:largeHeap="true"
             android:parentActivityName=".ViewProfile"
-            android:theme="@style/AppTheme.ActionBar.Transparent"></activity>
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
             android:name=".ViewProfile"
             android:label="View Profile"
@@ -43,8 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-            android:parentActivityName=".Home"
-            android:theme="@style/AppTheme.ActionBar.Transparent"/>
     </application>
 
 </manifest>
