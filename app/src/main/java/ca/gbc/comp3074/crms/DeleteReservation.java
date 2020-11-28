@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,11 +28,13 @@ public class DeleteReservation extends AppCompatActivity {
             "Reservation 5","Reservation 6","Reservation 7","Reservation 8"};
 
     List<String> displayRestaurants = new ArrayList<>();
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_reservation);
+        listView = findViewById(R.id.delete_reservation_listview);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("users").document(FirebaseAuth.getInstance().getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -43,10 +48,11 @@ public class DeleteReservation extends AppCompatActivity {
                             displayRestaurants.add(key + "-" + value);
                         });
 
-                        ListView listView = findViewById(R.id.delete_reservation_listview);
                         ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
                                 R.layout.delete_reservation_layout, R.id.label, displayRestaurants);
                         listView.setAdapter(adapter);
+
+
                     }
                     else
                         Log.d("SABIH2", "EMPTY");
@@ -56,7 +62,14 @@ public class DeleteReservation extends AppCompatActivity {
             }
         });
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),
+                        "Click ListItem Number " + position, Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
 
-;
     }
 }
