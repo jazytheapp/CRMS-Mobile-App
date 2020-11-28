@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ca.gbc.comp3074.crms">
 
-    <uses-permission android:name="androd.permission.READ_EXERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CRMS">
+        <activity android:name=".ChangePassword"
+            android:parentActivityName=".ViewProfile"
+            android:theme="@style/AppTheme.ActionBar.Transparent"
+            android:label="Change Password"/>
+        <activity android:name=".DeleteReservation"></activity>
+        <activity android:name=".MakeReservation" />
+        <activity android:name=".EditProfile"
+            android:parentActivityName=".ViewProfile"
+            android:theme="@style/AppTheme.ActionBar.Transparent"
+            android:label="Edit Profile"/>
+        <activity android:name=".ViewProfile"
+            android:theme="@style/AppTheme.ActionBar.Transparent"
+            android:label="View Profile"/>
+        <activity android:name=".Home"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,22 +33,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".EditProfile"
-            android:label="Edit Profile"
-            android:largeHeap="true"
-            android:parentActivityName=".ViewProfile"
-            android:theme="@style/AppTheme.ActionBar.Transparent" />
-        <activity
-            android:name=".ViewProfile"
-            android:label="View Profile"
-            android:theme="@style/AppTheme.ActionBar.Transparent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
