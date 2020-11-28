@@ -15,14 +15,16 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class DeleteReservation extends AppCompatActivity {
 
     String[] mobileArray = {"Reservation 1","Reservation 2","Reservation 3","Reservation 4",
             "Reservation 5","Reservation 6","Reservation 7","Reservation 8"};
 
-
+    List<String> displayRestaurants = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,13 @@ public class DeleteReservation extends AppCompatActivity {
                     if (document.exists()) {
                         HashMap<String, String> alist = (HashMap<String, String>) document.get("reservations");
                         alist.forEach((key, value) -> {
-                            Log.d("SABIH", key + "-" + value);
+                            displayRestaurants.add(key + "-" + value);
                         });
+
+                        ListView listView = findViewById(R.id.delete_reservation_listview);
+                        ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
+                                R.layout.delete_reservation_layout, R.id.label, displayRestaurants);
+                        listView.setAdapter(adapter);
                     }
                     else
                         Log.d("SABIH2", "EMPTY");
@@ -48,10 +55,8 @@ public class DeleteReservation extends AppCompatActivity {
                     Log.d("SABIH3", "FAILED");
             }
         });
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,
-                R.layout.delete_reservation_layout, R.id.label, mobileArray);
 
-        ListView listView = findViewById(R.id.delete_reservation_listview);
-        listView.setAdapter(adapter);
+
+;
     }
 }
