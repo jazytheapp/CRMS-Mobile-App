@@ -16,11 +16,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DeleteReservation extends AppCompatActivity {
 
@@ -29,6 +31,7 @@ public class DeleteReservation extends AppCompatActivity {
 
     List<String> displayRestaurants = new ArrayList<>();
     ListView listView;
+    ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,7 @@ public class DeleteReservation extends AppCompatActivity {
                             displayRestaurants.add(key + "-" + value);
                         });
 
-                        ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
+                        adapter = new ArrayAdapter<String>(getApplicationContext(),
                                 R.layout.delete_reservation_layout, R.id.label, displayRestaurants);
                         listView.setAdapter(adapter);
 
@@ -68,6 +71,19 @@ public class DeleteReservation extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         "Click ListItem Number " + position, Toast.LENGTH_LONG)
                         .show();
+                String name = displayRestaurants.get(position);
+                name = name.split("-")[0];
+                DocumentReference docRef = db.collection("users").document(FirebaseAuth.getInstance().getUid());
+                // Remove the 'capital' field from the document
+                Map<String,Object> updates = new HashMap<>();
+                updates.put("reservations." + name, FieldValue.delete());
+                docRef.update(updates).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        displayRestaurants.remove(position);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
             }
         });
 
