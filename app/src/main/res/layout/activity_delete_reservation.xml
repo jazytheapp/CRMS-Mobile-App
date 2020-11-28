@@ -8,6 +8,24 @@
 
     <ListView
         android:id="@+id/delete_reservation_listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="414dp"
+        android:layout_height="605dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="413dp"
+        android:layout_height="53dp"
+        android:background="#D0E8F8"
+        android:gravity="center"
+        android:text="Click to delete reservation"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
