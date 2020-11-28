@@ -5,56 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditProfile">
+
     <Button
         android:id="@+id/button_update"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="134dp"
         android:layout_height="63dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="68dp"
         android:background="@drawable/button"
         android:text="Update"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_password" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_edit_image"
-        android:layout_width="221dp"
-        android:layout_height="222dp"
-        android:layout_marginTop="96dp"
-        android:src="@drawable/profile"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_name" />
 
     <EditText
         android:id="@+id/editText_name"
         android:layout_width="240dp"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="135dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="John Doe"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_edit_image" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_profile" />
 
-    <EditText
-        android:id="@+id/editText_password"
-        android:layout_width="238dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:text="Password"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/imageView_profile"
+        android:layout_width="216dp"
+        android:layout_height="257dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_name" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
