@@ -68,9 +68,7 @@ public class DeleteReservation extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),
-                        "Click ListItem Number " + position, Toast.LENGTH_LONG)
-                        .show();
+
                 String name = displayRestaurants.get(position);
                 name = name.split("-")[0];
                 DocumentReference docRef = db.collection("users").document(FirebaseAuth.getInstance().getUid());
