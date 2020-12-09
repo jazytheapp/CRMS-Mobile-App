@@ -46,49 +46,53 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Make Reservation"
+        android:text="Reserve Table"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.94" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginTop="152dp"
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="159dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="43dp"
         android:ems="10"
+        android:hint="Select Date"
         android:inputType="date"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-        app:layout_constraintVertical_bias="0.618" />
+        app:layout_constraintTop_toBottomOf="@+id/restaurant_view" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_timer1"
+        android:layout_width="157dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Select Time"
+        android:inputType="number"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        app:layout_constraintVertical_bias="0.734" />
+
+    <TextView
+        android:id="@+id/restaurant_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:text="Restaurant"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent" />
 

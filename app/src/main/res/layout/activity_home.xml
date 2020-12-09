@@ -4,8 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="15dp"
+    android:layout_marginTop="50dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="15dp"
     tools:context=".Home">
+
+
+
 
     <Button
         android:id="@+id/logoutButton"
@@ -24,229 +30,23 @@
         android:id="@+id/currentUserText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.974" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="320dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search"
-        app:layout_constraintVertical_bias="0.749"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    <RatingBar
-        android:id="@+id/ratingBar5"
-        style="@style/Widget.AppCompat.RatingBar.Small"
-        android:layout_width="82dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="12dp"
-        android:rating="4"
-        android:theme="@style/RatingBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="161dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="7dp"
-        android:text="Asian | Noodle | Chinese"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="111dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="7dp"
-        android:text="Kungfu Noodle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="354 King Street"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.755"
-        app:layout_constraintStart_toEndOf="@+id/ratingBar5"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="161dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="8dp"
-        android:text="Asian | Sushi | Japanese"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="111dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:text="CO2 Sushi Bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="10 Dundas Street"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
-        app:layout_constraintStart_toEndOf="@+id/ratingBar4"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <RatingBar
-        android:id="@+id/ratingBar4"
-        style="@style/Widget.AppCompat.RatingBar.Small"
-        android:theme="@style/RatingBar"
-        android:layout_width="82dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="11dp"
-        android:max="5"
-        android:numStars="5"
-        android:rating="3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="320dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search"
-        app:layout_constraintVertical_bias="0.385"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="161dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="7dp"
-        android:text="Fast Food | Pizza"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="369 Yonge Street"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
-        app:layout_constraintStart_toEndOf="@+id/ratingBar3"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <RatingBar
-        android:id="@+id/ratingBar3"
-        style="@style/Widget.AppCompat.RatingBar.Small"
-        android:theme="@style/RatingBar"
-        android:layout_width="82dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="12dp"
-        android:numStars="5"
-        android:rating="4"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="111dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="7dp"
-        android:text="Pizza Q"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="111dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:text="CO2 Sushi Bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <EditText
-        android:id="@+id/search"
-        android:layout_width="321dp"
-        android:layout_height="39dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@android:string/search_go"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.97" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="320dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ListView
+        android:id="@+id/myListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search"
-        app:layout_constraintVertical_bias="0.016"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="161dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="8dp"
-        android:text="Asian | Sushi | Japanese"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
