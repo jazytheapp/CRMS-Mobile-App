@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,8 +54,55 @@ public class Home extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_layout, menu);
+
+        MenuItem item = menu.findItem(R.id.search_view);
+        SearchView searchView = (SearchView) item.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                processSearch(s);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                processSearch(s);
+                return true;
+            }
+        });
         return true;
     }
+
+    private void processSearch(String s){
+        myListView = findViewById(R.id.myListView);
+        restaurantList = new ArrayList<>();
+
+        FirebaseFirestore resRef = FirebaseFirestore.getInstance();
+        CollectionReference questionsRef = resRef.collection("restaurants");
+        questionsRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful()) {
+                    for (DocumentSnapshot document : task.getResult()) {
+                        Restaurant restaurant = document.toObject(Restaurant.class);
+
+                        if(restaurant.getName().toLowerCase().contains(s.toLowerCase())) {
+                            restaurantList.add(restaurant);
+                            Log.d("TAG", restaurant.getName());
+                        }
+                    }
+                    ListAdapter adapter = new ListAdapter(Home.this, restaurantList);
+                    myListView.setAdapter(adapter);
+
+                }else{
+                    Log.d("error","connection not working");
+                }
+            }
+        });
+    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -67,6 +117,9 @@ public class Home extends AppCompatActivity {
             case R.id.deleteReservation:
                 startDeleteReservation();
                 return true;
+            case R.id.search_view:
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -117,13 +170,13 @@ public class Home extends AppCompatActivity {
                     for (DocumentSnapshot document : task.getResult()) {
                         Restaurant restaurant = document.toObject(Restaurant.class);
                         restaurantList.add(restaurant);
-                        Log.d("TAG", restaurant.getName());
+//                        Log.d("TAG", restaurant.getName());
                     }
                     ListAdapter adapter = new ListAdapter(Home.this, restaurantList);
                     myListView.setAdapter(adapter);
 
                 }else{
-                    Log.d("error","not working");
+                    Log.d("error","connection not working");
                 }
             }
         });

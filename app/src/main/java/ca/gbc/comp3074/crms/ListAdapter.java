@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -20,11 +22,12 @@ import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ca.gbc.comp3074.crms.models.Restaurant;
 
-public class ListAdapter extends ArrayAdapter {
+public class ListAdapter extends ArrayAdapter implements Filterable {
 
     private Activity mContext;
     List<Restaurant> restaurantList;
@@ -34,7 +37,10 @@ public class ListAdapter extends ArrayAdapter {
         this.mContext = mContext;
         this.restaurantList = restaurantList;
 
+
     }
+
+
 
     @NonNull
     @Override
@@ -65,6 +71,5 @@ public class ListAdapter extends ArrayAdapter {
 
         return listItemView;
     }
-
-
 }
+
